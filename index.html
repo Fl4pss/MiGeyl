@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Cute Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Hearts -->
+  <div class="heart-bg" id="heartBg"></div>
+
+  <!-- Floating Photos + Videos -->
+  <div class="photo-bg" id="photoBg"></div>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" src="music.mp3" loop></audio>
+
+  <div id="app">
+
+    <!-- SCREEN 1 -->
+    <div class="screen active">
+      <h1 id="text1"></h1>
+      <button onclick="handleNext(this)">Next 💕</button>
+    </div>
+
+    <!-- SCREEN 2 -->
+    <div class="screen">
+      <p id="text2"></p>
+      <button onclick="handleNext(this)">Next 💕</button>
+    </div>
+
+    <!-- SCREEN 3 -->
+    <div class="screen">
+      <p id="text3"></p>
+      <button onclick="handleNext(this)">Next 💕</button>
+    </div>
+
+    <!-- SCREEN 4 -->
+    <div class="screen">
+      <p id="text4"></p>
+      <button onclick="handleNext(this)">One last thing…</button>
+    </div>
+
+    <!-- QUESTION -->
+    <div class="screen">
+      <h1>Will you be my Valentine? 💘</h1>
+      <div class="buttons">
+        <button class="yes" onclick="yesAnswer()">Yes 💖</button>
+        <button class="no" id="noBtn">No 🙈</button>
+      </div>
+    </div>
+
+    <!-- FINAL -->
+    <div class="screen">
+      <h1>You just made me the happiest person ❤️</h1>
+      <p>
+        Happy Valentine’s Day, my love.<br>
+        I can’t wait to make more memories with you.
+      </p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
