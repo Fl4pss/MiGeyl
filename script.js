@@ -305,30 +305,34 @@ function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
 }
 
 /* FIXED DOWNLOAD BUTTON */
-document.addEventListener("click", function (e) {
-    if (e.target && e.target.id === "downloadCardBtn") {
-      const canvas = document.getElementById("memoryCard");
-  
-      if (!canvas) {
-        console.log("Canvas not found");
-        return;
-      }
-  
-      try {
-        const imageURL = canvas.toDataURL("image/png");
-  
-        const link = document.createElement("a");
-        link.href = imageURL;
-        link.download = "Valentine_Invitation_2026.png";
-  
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      } catch (err) {
-        console.error("Download failed:", err);
-      }
+document.getElementById("downloadCardBtn").addEventListener("click", function () {
+  const canvas = document.getElementById("memoryCard");
+
+  if (!canvas) return;
+
+  try {
+    const imageURL = canvas.toDataURL("image/png");
+
+    // Detect iPhone / iPad
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+    if (isIOS) {
+      // Open in new tab so user can long press → Save Image
+      const newTab = window.open();
+      newTab.document.write('<img src="' + imageURL + '" style="width:100%">');
+    } else {
+      // Normal download for Android & desktop
+      const link = document.createElement("a");
+      link.href = imageURL;
+      link.download = "Valentine_Collage_2026.png";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
-  });
+
+  } catch (err) {
+    console.error("Download failed:", err);
+  }
+});
+
   
-
-
