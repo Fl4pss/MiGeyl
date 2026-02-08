@@ -11,7 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     overflow: hidden;
   }
   
@@ -36,8 +36,10 @@
   
   /* TITLES */
   h1 {
-    font-family: 'Pacifico', cursive;
-    font-size: 32px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 34px;
+    letter-spacing: 0.5px;  
     margin-bottom: 25px;
     color: #ff4f70;
   }
@@ -52,7 +54,8 @@
   
   /* BUTTONS */
   button {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
+
     padding: 14px 32px;
     border-radius: 40px;
     border: none;
