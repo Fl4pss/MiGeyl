@@ -313,7 +313,7 @@ document.addEventListener("click", function (e) {
   
         const link = document.createElement("a");
         link.href = imageURL;
-        link.download = "Valentine_Collage_2026.png";
+        link.download = "Valentine_Invitation_2026.png";
   
         document.body.appendChild(link);
         link.click();
@@ -324,3 +324,4 @@ document.addEventListener("click", function (e) {
     }
   });
   
+
