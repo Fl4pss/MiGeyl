@@ -14,12 +14,18 @@ const photos = [
   "media/photos/1.jpg",
   "media/photos/2.jpg",
   "media/photos/3.jpeg",
-  "media/photos/4.jpg"
+  "media/photos/4.jpg",
+  "media/photos/5.jpeg",
+  "media/photos/6.jpeg",
+  "media/photos/7.jpg",
+  "media/photos/8.jpg",
+  "media/photos/9.jpg"
 ];
 
 const videos = [
   "media/videos/1.mp4",
-  "media/videos/2.mp4"
+  "media/videos/2.mp4",
+  "media/videos/3.mp4"
 ];
 
 /* CONTAINERS */
@@ -324,4 +330,5 @@ document.addEventListener("click", function (e) {
     }
   });
   
+
 
