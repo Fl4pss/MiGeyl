@@ -218,45 +218,74 @@ function generateMemoryCard() {
     ctx.save();
     ctx.translate(pos.x + 170, pos.y + 170);
     ctx.rotate(pos.rotate);
-
+  
     ctx.shadowColor = "rgba(0,0,0,0.25)";
     ctx.shadowBlur = 20;
-
+  
     ctx.fillStyle = "white";
     ctx.fillRect(-190, -190, 380, 420);
-
+  
     ctx.shadowBlur = 0;
-    ctx.drawImage(img, -170, -170, 340, 340);
-
+  
+    // --- FIXED IMAGE RATIO ---
+    const frameSize = 340;
+  
+    const imgRatio = img.width / img.height;
+    const frameRatio = 1; // square frame
+  
+    let sx, sy, sWidth, sHeight;
+  
+    if (imgRatio > frameRatio) {
+      // image wider than frame
+      sHeight = img.height;
+      sWidth = img.height * frameRatio;
+      sx = (img.width - sWidth) / 2;
+      sy = 0;
+    } else {
+      // image taller than frame
+      sWidth = img.width;
+      sHeight = img.width / frameRatio;
+      sx = 0;
+      sy = (img.height - sHeight) / 2;
+    }
+  
+    ctx.drawImage(
+      img,
+      sx, sy, sWidth, sHeight,
+      -170, -170, frameSize, frameSize
+    );
+  
     ctx.restore();
   }
+  
 
   function drawText() {
     ctx.textAlign = "center";
-
+  
     ctx.fillStyle = "#ff4f70";
-    ctx.font = "bold 60px Pacifico";
+    ctx.font = "bold 70px Playfair Display";
     ctx.fillText("Happy Valentine’s Day 💖", 400, 120);
-
-    ctx.font = "28px Poppins";
+  
+    ctx.font = "28px Inter";
     ctx.fillStyle = "#555";
     ctx.fillText("February 14, 2026", 400, 170);
-
-    ctx.font = "26px Poppins";
+  
+    ctx.font = "28px Inter";
     ctx.fillStyle = "#333";
-
+  
     const poem =
       "In your smile, I found my home.\n" +
       "In your arms, my safest place.\n" +
       "With every heartbeat, I choose you,\n" +
       "Today, tomorrow, always. ❤️";
-
+  
     wrapText(ctx, poem, 400, 830, 600, 40);
-
+  
     ctx.font = "50px Arial";
     ctx.fillText("💘", 120, 950);
     ctx.fillText("💞", 680, 950);
   }
+  
 }
 
 
